@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071a2d" />
+  <meta property="og:image" content="assets/logo-nexo-circular.svg" />
+  <title>Nexo Circular Chihuahua | Inteligencia Territorial y Economía Circular</title>
+  <style>
+    :root{
+      --navy:#071a2d; --navy-2:#0c2842; --green:#66bb4f; --green-2:#3e9134; --bg:#f7faf8; --text:#102132; --muted:#607083; --line:rgba(255,255,255,.12);
+      --shadow:0 24px 60px rgba(7,26,45,.26);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f4f6f4;color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1220px,calc(100% - 32px));margin:0 auto}
+    .hero-shell{padding:28px 0 60px;background:linear-gradient(180deg,#f5f6f4 0%,#eff5ef 100%)}
+    .hero-card{background:linear-gradient(135deg,rgba(7,26,45,.98) 0%,rgba(10,36,58,.97) 40%,rgba(14,42,50,.96) 100%);color:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand svg{display:block}
+    .brand-copy strong{display:block;font-size:1.35rem;letter-spacing:.02em}
+    .brand-copy span{display:block;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:#d0dbdf}
+    .menu{display:flex;gap:30px;align-items:center;font-size:.95rem;color:#ecf4f3}
+    .menu a{opacity:.88}
+    .menu a:hover{opacity:1;color:#fff}
+    .cta-nav{padding:12px 22px;border:1px solid rgba(102,187,79,.6);border-radius:999px;color:#fff}
+    .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch}
+    .hero-copy{padding:48px 38px 26px}
+    .eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(102,187,79,.12);border:1px solid rgba(102,187,79,.28);color:#8dd46d;font-size:.78rem;font-weight:700;letter-spacing:.03em}
+    h1{font-size:3.4rem;line-height:1.02;margin:22px 0 18px;max-width:630px}
+    h1 .accent{color:#8fd96e}
+    .lead{font-size:1.12rem;line-height:1.6;color:#d4dde2;max-width:590px}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:14px;font-weight:700;transition:.2s ease}
+    .btn-primary{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;box-shadow:0 10px 24px rgba(102,187,79,.28)}
+    .btn-secondary{border:1px solid rgba(102,187,79,.5);color:#fff;background:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .hero-visual{position:relative;min-height:560px;background:
+      linear-gradient(180deg,rgba(8,18,28,.14),rgba(8,18,28,.18)),
+      radial-gradient(circle at 65% 32%, rgba(122,221,105,.22), transparent 24%),
+      radial-gradient(circle at 77% 72%, rgba(122,221,105,.18), transparent 26%),
+      linear-gradient(180deg,rgba(0,0,0,0) 48%,rgba(0,0,0,.28) 100%),
+      url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;}
+    .state-grid{position:absolute;top:72px;right:86px;width:180px;height:150px;opacity:.6;background:radial-gradient(circle,#8bdd6f 1.5px,transparent 1.7px);background-size:8px 8px;clip-path:polygon(27% 0%,58% 0%,70% 10%,74% 24%,86% 34%,95% 56%,86% 84%,64% 95%,29% 93%,11% 72%,9% 46%,20% 18%)}
+    .node{position:absolute;width:10px;height:10px;border-radius:50%;background:#9bf47f;box-shadow:0 0 12px #9bf47f}
+    .node.n1{left:18%;bottom:18%}.node.n2{left:35%;bottom:28%}.node.n3{left:48%;bottom:23%}.node.n4{left:61%;bottom:30%}.node.n5{left:72%;bottom:18%}.node.n6{left:83%;bottom:26%}
+    .arc{position:absolute;height:2px;background:linear-gradient(90deg,transparent,#9bf47f,transparent);transform-origin:left center;opacity:.9}
+    .a1{left:19%;bottom:18.7%;width:220px;transform:rotate(-14deg)} .a2{left:36%;bottom:28.5%;width:170px;transform:rotate(8deg)} .a3{left:48%;bottom:23.5%;width:210px;transform:rotate(-4deg)} .a4{left:62%;bottom:29.8%;width:150px;transform:rotate(-16deg)} .a5{left:20%;bottom:18.5%;width:560px;transform:rotate(2deg)}
+    .feature-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(8,34,31,.65),rgba(7,34,28,.92))}
+    .feature{padding:26px 24px;border-right:1px solid rgba(255,255,255,.12)}
+    .feature:last-child{border-right:none}
+    .feature h3{margin:0 0 8px;font-size:1.05rem}
+    .feature p{margin:0;color:#d0dcdb;font-size:.92rem;line-height:1.55}
+    section{padding:56px 0}
+    .section-title{text-align:center;margin-bottom:28px}
+    .section-title h2{font-size:2.2rem;margin:0 0 10px}
+    .section-title p{margin:0;color:var(--muted);font-size:1rem}
+    .accent-line{width:78px;height:4px;background:linear-gradient(135deg,var(--green),var(--green-2));border-radius:999px;margin:12px auto 0}
+    .cards-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .card{background:#fff;border-radius:14px;padding:26px 20px;box-shadow:0 10px 26px rgba(7,26,45,.06);border:1px solid rgba(7,26,45,.08);text-align:center}
+    .icon{width:54px;height:54px;margin:0 auto 16px;border-radius:14px;background:rgba(102,187,79,.1);display:grid;place-items:center;color:var(--green-2);font-weight:800;font-size:1.15rem}
+    .card h3{font-size:1.05rem;margin:0 0 10px}
+    .card p{margin:0;color:var(--muted);line-height:1.55;font-size:.92rem}
+    .band{background:linear-gradient(135deg,#071a2d 0%,#0c2842 50%,#0f3327 100%);color:#fff}
+    .benefits{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .benefit{padding:8px 10px;text-align:left}
+    .benefit h4{margin:10px 0 8px;font-size:1rem}
+    .benefit p{margin:0;color:#d4dde2;line-height:1.55;font-size:.92rem}
+    .cta-band{padding:0 0 42px;background:linear-gradient(180deg,#0a2338 0%,#071a2d 100%)}
+    .cta-box{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:34px 30px;border-radius:20px;background:
+      linear-gradient(135deg,rgba(4,18,32,.98),rgba(8,33,58,.95)),
+      radial-gradient(circle at 20% 20%,rgba(102,187,79,.2),transparent 30%);color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .cta-box h3{font-size:2rem;margin:0 0 8px}.cta-box p{margin:0;color:#d3dde2}
+    footer{padding:18px 0;background:#061321;color:#cad3d9;font-size:.9rem}
+    .footer-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:24px;flex-wrap:wrap}
+    @media (max-width:1100px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:420px}.cards-5,.benefits{grid-template-columns:repeat(2,1fr)}.feature-strip{grid-template-columns:repeat(2,1fr)} }
+    
+    .nav-isotipo{width:58px;height:58px;object-fit:contain;display:block}
+    .hero-logo-full{width:290px;max-width:100%;height:auto;object-fit:contain;display:block;margin-bottom:18px}
+    .footer-logo{width:180px;max-width:100%;height:auto;object-fit:contain;display:block}
+
+    @media (max-width:720px){.wrap{width:min(100% - 20px,1220px)}.nav{flex-wrap:wrap;gap:16px}.menu{display:none}.hero-copy{padding:34px 22px 24px}h1{font-size:2.45rem}.feature-strip,.cards-5,.benefits{grid-template-columns:1fr}.cta-box{flex-direction:column;align-items:flex-start}.brand-copy strong{font-size:1.12rem}}
+  </style>
+</head>
+<body>
+  <div class="hero-shell">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="nav">
+          <a class="brand" href="#inicio">
+            <img src="assets/logo-nexo-isotipo.svg" alt="Isotipo Nexo Circular Chihuahua" class="nav-isotipo" width="58" height="58" />
+            <div class="brand-copy"><strong>NEXO CIRCULAR</strong><span>CHIHUAHUA</span></div>
+          </a>
+          <nav class="menu">
+            <a href="#inicio">Inicio</a><a href="#solucion">Solución</a><a href="#modulos">Módulos</a><a href="#beneficios">Beneficios</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+          </nav>
+          <a class="cta-nav" href="index.html">Entrar a la plataforma</a>
+        </div>
+        <div class="hero-grid" id="inicio">
+          <div class="hero-copy">
+            <img src="assets/logo-nexo-circular.svg" alt="Nexo Circular Chihuahua" class="hero-logo-full" width="290" height="96" />
+            <span class="eyebrow">Inteligencia territorial para decisiones estratégicas</span>
+            <h1>Inteligencia que <span class="accent">conecta oportunidades</span> con un futuro sostenible.</h1>
+            <p class="lead">Nexo Circular Chihuahua integra datos, territorio y mercado para impulsar decisiones estratégicas, desarrollo económico y economía circular en todo el estado.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="index.html">Conocer la plataforma</a>
+              <a class="btn btn-secondary" href="#modulos">Ver módulos</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="state-grid"></div>
+            <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span><span class="node n5"></span><span class="node n6"></span>
+            <span class="arc a1"></span><span class="arc a2"></span><span class="arc a3"></span><span class="arc a4"></span><span class="arc a5"></span>
+          </div>
+        </div>
+        <div class="feature-strip" id="solucion">
+          <div class="feature"><h3>Inteligencia Territorial</h3><p>Datos confiables y actualizados para entender el territorio y su potencial.</p></div>
+          <div class="feature"><h3>Prospección Comercial</h3><p>Identifica oportunidades, sectores estratégicos y conecta con actores clave.</p></div>
+          <div class="feature"><h3>Sostenibilidad</h3><p>Impulsa prácticas sostenibles y modelos de negocio circulares para el desarrollo regional.</p></div>
+          <div class="feature"><h3>Economía Circular</h3><p>Promueve el aprovechamiento de recursos y la creación de valor compartido.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="modulos">
+    <div class="wrap">
+      <div class="section-title"><h2>Módulos de la plataforma</h2><div class="accent-line"></div></div>
+      <div class="cards-5">
+        <article class="card"><div class="icon">01</div><h3>Mapas e indicadores</h3><p>Visualiza y analiza indicadores clave del territorio, la demanda y la dinámica comercial.</p></article>
+        <article class="card"><div class="icon">02</div><h3>Sectores y cadenas</h3><p>Explora sectores estratégicos y cadenas de valor prioritarias dentro del estado.</p></article>
+        <article class="card"><div class="icon">03</div><h3>Prospección y mercado</h3><p>Detecta oportunidades comerciales, vacíos territoriales y perfiles de inversión.</p></article>
+        <article class="card"><div class="icon">04</div><h3>Economía circular</h3><p>Identifica sinergias, subproductos, posibles compradores y oportunidades circulares.</p></article>
+        <article class="card"><div class="icon">05</div><h3>Reportes y datos</h3><p>Genera reportes homologados y exporta información clave para análisis y toma de decisiones.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="beneficios">
+    <div class="wrap">
+      <div class="section-title"><h2>Beneficios para tu organización</h2><div class="accent-line"></div></div>
+      <div class="benefits">
+        <article class="benefit"><div class="icon">A</div><h4>Mejores decisiones</h4><p>Información clara y oportuna para decisiones estratégicas de expansión y colaboración.</p></article>
+        <article class="benefit"><div class="icon">B</div><h4>Ahorro de tiempo</h4><p>Datos integrados en un solo lugar, siempre actualizados y listos para análisis.</p></article>
+        <article class="benefit"><div class="icon">C</div><h4>Ventaja competitiva</h4><p>Identifica oportunidades antes que los demás y construye rutas de entrada más sólidas.</p></article>
+        <article class="benefit"><div class="icon">D</div><h4>Impacto sostenible</h4><p>Contribuye al desarrollo económico y ambiental mediante prácticas de circularidad aplicada.</p></article>
+        <article class="benefit"><div class="icon">E</div><h4>Colaboración efectiva</h4><p>Conecta con actores clave del ecosistema regional para crear valor compartido.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap">
+      <div class="section-title"><h2>Una plataforma para conectar datos, territorio y oportunidades</h2><p>Nexo Circular Chihuahua está diseñada para instituciones, empresas, cámaras, desarrolladores, consultorías y actores del ecosistema económico que necesitan decisiones mejor informadas.</p><div class="accent-line"></div></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contacto">
+    <div class="wrap">
+      <div class="cta-box">
+        <div>
+          <h3>Conecta datos, territorio y oportunidades.</h3>
+          <p>Construyamos juntos un Chihuahua más próspero, competitivo y sostenible.</p>
+        </div>
+        <a class="btn btn-primary" href="index.html">Entrar a la plataforma</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;"><img src="assets/logo-nexo-circular.svg" alt="Nexo Circular Chihuahua" class="footer-logo" width="180" height="60" /><span>© 2026 Nexo Circular Chihuahua. Todos los derechos reservados.</span></div>
+      <div class="footer-links"><a href="#">Aviso de privacidad</a><a href="#">Términos de uso</a><a href="#contacto">Contacto</a></div>
+    </div>
+  </footer>
+</body>
+</html>
